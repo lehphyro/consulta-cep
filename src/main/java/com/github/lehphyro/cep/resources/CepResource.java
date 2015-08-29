@@ -3,12 +3,14 @@ package com.github.lehphyro.cep.resources;
 import com.codahale.metrics.annotation.Timed;
 import com.github.lehphyro.cep.core.Endereco;
 import com.github.lehphyro.cep.service.CepService;
+import com.google.common.base.Charsets;
 import org.hibernate.validator.constraints.Length;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -30,6 +32,6 @@ public class CepResource {
         if (endereco == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        return Response.ok(endereco).build();
+        return Response.ok(endereco).header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_TYPE.withCharset(Charsets.UTF_8.name())).build();
     }
 }

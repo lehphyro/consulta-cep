@@ -2,6 +2,8 @@ package com.github.lehphyro.cep.correiocontrol;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class CepRepresentation {
 
     private String bairro;
@@ -58,5 +60,22 @@ public class CepRepresentation {
     @JsonProperty
     public void setLocalidade(String localidade) {
         this.localidade = localidade;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CepRepresentation that = (CepRepresentation) o;
+        return Objects.equals(bairro, that.bairro) &&
+                Objects.equals(logradouro, that.logradouro) &&
+                Objects.equals(cep, that.cep) &&
+                Objects.equals(uf, that.uf) &&
+                Objects.equals(localidade, that.localidade);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bairro, logradouro, cep, uf, localidade);
     }
 }

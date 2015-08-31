@@ -1,3 +1,10 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 9090
+  adminConnectors:
+    - type: http
+      port: 9091
 target: http://cep.correiocontrol.com.br
 httpClient:
   timeout: 5s

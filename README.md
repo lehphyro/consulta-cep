@@ -6,7 +6,7 @@ Para executar, utilize:
  * Main Class: com.github.lehphyro.cep.ConsultaCepApplication
  * Working Directory: diretório raiz do projeto (que possui pom.xml)
  * Program Arguments: server src/etc/config/config.yml
- * No browser acesse: http://localhost:8080/cep/01424001
+ * No browser acesse: http://localhost:9090/cep/01424001
 
 ## Arquitetura
 Este serviço é implementado utilizando o framework [Dropwizard](http://www.dropwizard.io/). Este framework é útil para
